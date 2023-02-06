@@ -1,6 +1,8 @@
 *.o
+*.docx
 *.pptx
 *.mod
 *.exe
 __pycache__
 basic/note/test.code-workspace
+README.md
