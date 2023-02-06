@@ -1,0 +1,6 @@
+*.o
+*.pptx
+*.mod
+*.exe
+__pycache__
+basic/note/test.code-workspace
