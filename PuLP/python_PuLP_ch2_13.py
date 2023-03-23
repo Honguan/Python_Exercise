@@ -11,7 +11,7 @@ y = LpVariable("y", lowBound=0)
 prob += 18*x + 16*y, "Total Revenue"
 
 # 定義約束條件
-prob += 6*x + 5*y <= 8
+prob += 6*x + 5*y <= 9
 prob += 6*x + 3.5*y <= 7
 prob += 2.5*x + 4*y <= 5
 
