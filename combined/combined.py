@@ -3,6 +3,9 @@ import os
 # 指定目標文件夾路徑
 folder_path = input(r"請輸入路徑: ")
 
+# 提示使用者輸入輸出路徑
+output_path = input(r"請輸入輸出路徑: ")
+
 # 獲取目標文件夾中所有 .txt 文件的路徑列表
 txt_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f)) and f.endswith(".txt")]
 

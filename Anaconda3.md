@@ -103,6 +103,9 @@ pip uninstall MarkupSafe
 # 安装 pyinstaller
 pip install pyinstaller
 
+# 打包成exe
+pyinstaller -F "main.py"
+
 # 打包成exe，並設置圖標
 pyinstaller -F -i "icon.ico" -w "main.py"
 
