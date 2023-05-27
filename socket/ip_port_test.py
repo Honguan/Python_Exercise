@@ -1,4 +1,14 @@
 import socket
+import logging
+
+# 設定 log 輸出格式
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename='log/port_scan.log',  # 指定log檔輸出路徑和檔名
+    filemode='a'  # 指定log檔打開的模式，'a'代表追加模式，'w'代表覆蓋模式
+)
+
 
 # 定義預設端口列表
 default_port_list = ["21", "22", "23", "25", "53", "80", "110", "115", "135", "139", "143", "194", "443", "445", "1433", "3306", "3389", "5632", "5900"]
@@ -68,7 +78,12 @@ while True:
             s.settimeout(1)
             s.connect((ip_address, int(port)))
             print("端口 {} <開啟>在主機 {} 上".format(port, ip_address)+"\n")
+            logging.info("端口 {} <開啟>在主機 {} 上".format(port, ip_address))
             s.close()
         except:
             print("端口 {} 未開啟在主機 {} 上".format(port, ip_address)+"\n")
+            
+    # 關閉日誌文件
+        for handler in logging.root.handlers:
+            handler.close()
 input("按任意鍵繼續...")
